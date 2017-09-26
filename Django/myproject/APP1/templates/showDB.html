@@ -1,0 +1,17 @@
+<!-- hello_world.html -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Show DB!!</title>
+    </head>
+    <body>
+        {% for unit in ALL_Post %}
+	    <label>{{ unit.id }}</label>
+	    <label>{{ unit.title }}</label>
+	    <label>{{ unit.location }}</label>
+	    <label>{{ unit.content }}</label>             
+            <br />
+	{% endfor %}
+    </body>
+</html>
