@@ -17,10 +17,11 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from APP1.views import hello_world
 from APP1.views import YoutubeDownload
+from BSA.views import Cal_BSA
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^YoutubeDownload/(?P<Url>\S*)/$', YoutubeDownload),
     url(r'^YoutubeDownload/$', YoutubeDownload),
-    url(r'^hi/', hello_world),
+    url(r'^BSA/', Cal_BSA),
 ]

@@ -1,0 +1,30 @@
+<!-- hello_world.html -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>I come from template!!</title>
+        <style>
+            body {
+               background-color: lightyellow;
+            }
+            em {
+                color: LightSeaGreen;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Hello World!</h1>
+        <em>{{ current_time }}</em><br>
+        
+        <form action="/action_page.php" method="get">
+          	<textarea rows="10" cols="100" name="content">
+組別,ID,group_argu_code,論證內容,time
+4,s10008,1,唯有穩健減核，才能兼顧能源安全、經濟發展與民眾福祉，進而打造綠能低碳環境，逐步邁向非核家園。,4/14/2016 14:11
+4,s10008,1,核能發電對於經濟發展與國計民生，扮演舉足輕重的角色。,4/14/2016 14:12
+4,s10007,1,核廢料的汙染尚無法解決，若是發生問題會發生無法挽救的汙染。,4/14/2016 14:13
+            </textarea>
+          <input type="submit" value="計算行為序列"></input>
+        </form>
+    </body>
+</html>

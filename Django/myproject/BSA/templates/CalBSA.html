@@ -1,0 +1,30 @@
+<!-- hello_world.html -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>I come from template!!</title>
+        <style>
+            body {
+               background-color: lightyellow;
+            }
+            em {
+                color: LightSeaGreen;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Hello World!</h1>
+        <em>{{ current_time }}</em><br>
+        
+        <form action="#" method="post">{% csrf_token %}
+            <textarea rows="10" cols="100" name="content">{{ csv_data }}</textarea>
+            行為種類數量為：<input type="text" name="NumOfBS" value="{{ NumOfBS }}"></input>
+            指定組別(-1為不指定)：<input type="text" name="Group" value="{{ Group }}"></input>
+          <input type="submit" value="計算行為序列"></input>
+        </form>
+        
+        <textarea rows="10" cols="100" >{{ array_BSA }}</textarea>
+        
+    </body>
+</html>

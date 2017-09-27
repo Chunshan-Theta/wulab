@@ -36,7 +36,7 @@ ALLOWED_HOSTS = [
     os.environ.get('OPENSHIFT_APP_DNS'), # Dynamically map to the OpenShift gear name.
     #'example.com', # First DNS alias (set up in the app)
     #'www.example.com', # Second DNS alias (set up in the app)
-    '127.0.0.1',             
+    '127.0.0.1','140.115.126.15'             
 ]
 
 
@@ -50,6 +50,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'APP1',
+    'BSA',
 )
 
 MIDDLEWARE_CLASSES = (

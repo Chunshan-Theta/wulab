@@ -1,0 +1,69 @@
+<!-- hello_world.html -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>下載youtube影片</title>
+        <style>
+            body {
+               background-color: lightyellow;
+            }
+            em {
+                color: LightSeaGreen;
+            }
+        </style>
+    </head>
+    <body>
+        <iframe width="420" height="315" src="https://www.youtube.com/embed/{{ VideoID }}?&autoplay=1&loop=1" frameborder="0" allowfullscreen></iframe>
+        <input id="inputURL" type="text"></input>
+        請輸入youtube網址
+        <button onclick="changeSrc()">開始偵測影片下載網址</button>
+        <h1>Hello!目前所搜尋的影片ＩＤ為：{{ VideoID }}</h1>
+        調整網址來搜索各種的youtube影片吧!<br>
+        <!--
+        網址調整方式：<br>
+        http://getyoutube-40241124.rhcloud.com/YoutubeDownload/ + youtubeID<br>
+        如:http://getyoutube-40241124.rhcloud.com/YoutubeDownload/znbKTbDGX1E<br><br>
+        
+        那怎麼知道個影片的youtubeID?<br>
+        以 https://www.youtube.com/watch?v=znbKTbDGX1E 這個影片為例<br>
+        這個影片的youtubeID為 znbKTbDGX1E ，也就是v=後面所接的文字<br>
+        那如果網址是長得如同 https://www.youtube.com/watch?v=znbKTbDGX1E&list=RDznbKTbDGX1E#t=191 呢？<br>
+        那ID只要擷取v=後面且在＆前方的文字，也就是znbKTbDGX1E。<br><br>
+        -->
+    
+        
+        
+        {% for link in SourceUrl %}
+            <li><a href="{{ link.url }}" download="filemane.mp4">{{ link.info }}</a></li>
+
+        {% endfor %}
+    </body>
+    <script type="text/javascript">
+    function changeSrc()
+    {
+        var inputURL = document.getElementById("inputURL").value;
+        var inputURL_TureOrNot = inputURL.indexOf("v=")
+        if (inputURL_TureOrNot != -1)
+        {
+            inputURL = inputURL.substring(inputURL.indexOf("v=")+2,inputURL.indexOf("v=")+13);
+        }
+        else if (inputURL.length == 11)
+        {
+            
+        }
+        else
+        {
+            //  https://youtu.be/V7iWGcyNcqo
+            inputURL = inputURL.substring(inputURL.indexOf("youtu.be")+9,inputURL.indexOf("youtu.be")+20);
+        }
+        var curWwwPath=window.document.location.href;
+        var pathName=window.document.location.pathname;
+        var pos=curWwwPath.indexOf(pathName);
+        var localhostPaht=curWwwPath.substring(0,pos);
+        location.href = localhostPaht+'/YoutubeDownload/'+inputURL;
+       
+    
+    }
+    </script>
+</html>
