@@ -1,5 +1,5 @@
 '''
-update : 2017/09/26
+update : 2017/10/25
 '''
 
 apache update :
@@ -46,8 +46,29 @@ case sensitive between windows and unix
       In MySQL, databases correspond to directories within the data directory. Each table within a database corresponds to at least           one file within the database directory. Consequently, the case sensitivity of the underlying operating system plays a part in           the case sensitivity of database and table names.
           
       One can configure how tables names are stored on the disk using the system variable lower_case_table_names.
-  
-         
+
+連結(link)的URL位置問題
+      需要把文件和資料庫欄位中的連結URL中的ip設定為目標主機的ip
+
+ubuntu server系統(LAMP?)連線伺服器資料庫(mariadb)
+      Can't connect to local(?) MySQL server through socket
+      資料庫伺服器是使用UNIX socket溝通的話，會無法連線到本地(?)的Mysql資料庫伺服器，因為他是用TCP/IP溝通。
+      
+      MariaDB 後無法從外部連線到伺服器
+      error: Host "IP" is not allowed to connect t othis MariaDB server.
+      (https://dotblogs.com.tw/supershowwei/2016/10/23/231423)
+      因為 MySQL 為了安全的因素，預設 root 帳號只能從本機 localhost 連線登入。
+      
+Mysql 5.7版本以上，SQL "Group By" 語法的寫法有變更
+      (http://www.ywnds.com/?p=8184)
+      
+      ˋ執行SQL指令，新增全域變數(sql_mode) > 
+      SET GLOBAL sql_mode =       
+      'STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION'
+      
+        
+
+      
 
 
   
