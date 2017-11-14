@@ -70,7 +70,14 @@ Mysql 5.7版本以上，SQL "Group By" 語法的寫法有變更
 
       
 
+-----
+放大縮小 Linux 磁區 http://benjr.tw/94843
 
+*parted
+要修改磁區大小第一步需要將該磁區 #umount 卸載下來才能修改,所以必須先透過 live cd 或 live usb 開機(關於 Ubuntu Live USB 可以參考 http://benjr.tw/1550),就可以直接透過 #parted 來修改 (請參考 http://benjr.tw/94833),需先 #umount 然後 resize.
+不習慣文字介面還可以用 #GParted 圖形介面來做 磁碟分割 (底層應該還是用 parted 來做)
+
+不知道為什麼在 Ubuntu 14.04 下面 resize 沒有辦法使用.仔細一看內文說明,resize 將不再支援,建議用戶用 parted (resizepart) (先將 partition 放大)+ e2fsprogs (再放大磁區) 做放大縮小磁區.
   
 
  
